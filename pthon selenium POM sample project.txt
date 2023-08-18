@@ -1,0 +1,52 @@
+pthon selenium POM sample project:
+1.create new project
+
+plug in package to install:
+1.selenium
+2.unittest(inbulid)
+3.html_Testrunner
+
+
+
+directory to create separately:
+1.drivers(copy and paste the drvers)
+2.pageobject
+3.testcase
+4.reports
+
+
+process for project:
+1.Testcases:
+       1.launch the chrome browers
+       2.open URL:http://admin-demo.nopcommerce.com/
+       3.Provide user: admin@yourstore.com
+       4.Admin Password:admin
+       5.click on logib
+       6.expected title:Dashboard  /nopCommerce adminstration
+
+steps:
+1.create POM
+    * create pythonfile for pages(LoginPage.py)  
+    *.create class name(LoginPage)
+    *Locators for all the elenments 
+ 
+    *create a contructor to initate the driver
+     def __init__(self,driver):
+        self.driver=driver
+
+    * for evert element ,we need to create an action method
+         ->it should be in meaning full name
+
+    **** so POM contains only element identification and action method
+
+2.Create TestCases:
+   *import unittest
+   *import HtmlTestRunner
+   *from selenium import webdriver
+   *import sys
+    sys.path.append("give path here ")
+      #otherwise goto environment variable ,and do setings
+      #since we are running the project thru command promt to get report
+
+   *from direc.filename import classname
+
