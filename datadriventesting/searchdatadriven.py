@@ -2,10 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from datadriventesting import xcelutility
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
-driver=webdriver.Chrome()
 driver.get("https://demo.nopcommerce.com/search?q=books")#launching the brower
 driver.maximize_window()
 time.sleep(3)
