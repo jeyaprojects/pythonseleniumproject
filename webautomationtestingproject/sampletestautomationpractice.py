@@ -4,10 +4,12 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common import keys
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
-driver=webdriver.Chrome()
 driver.implicitly_wait(10)
 driver.get("https://testautomationpractice.blogspot.com/")
 print("Launched Browser and Application:")
@@ -260,7 +262,7 @@ print("Resizing the Image")
 #Resizing the picture
 #time.sleep(3)
 toresizeobjet=driver.find_element(By.XPATH,"//div[@class='ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se']")
-
+driver.execute_script("arguments[0].scrollIntoView();",toresizeobjet)
 acct=ActionChains(driver)
 
 acct.drag_and_drop_by_offset(toresizeobjet,50,50).perform()
